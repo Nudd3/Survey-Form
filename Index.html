@@ -1,127 +1,206 @@
 <!DOCTYPE html>
 <style>
-
     body {
         text-align: center;
+        font-family: sans-serif;
+        background-image: linear-gradient(to top right, #33adff, #7300e6);
+        color: white;
     }
 
-    #survey-form{
-        
-        
-        width: 900px;
-        margin: 0 auto;
-        
+    #body {
+        width: 650px;
+        padding: 30px;
+        margin: auto;
+        border-radius: 10px;
+        text-align: left;
+        font-size: 20px;
+        background-image: linear-gradient(to bottom right, #33adff, #7300e6);
+    }
+    
+    #title {
+
+        font-size: 55px;
+
     }
 
-    .row-tab {
+    /*  User Story #2: I can see a short explanation 
+        with id="description" in P sized text.*/
+    #description {
+        font-size: 25px;
+    }
+
+    /* User Story #3: I can see a form with id="survey-form" */
+    #survey-form {
+  
+        width: 100%;
+ 
+    }
+
+
+    /* User Story #4: Inside the form element, 
+       I am required to enter my name in a field with id="name". */
+    #name {
+        width: 25%;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    /* User Story #5: Inside the form element, 
+       I am required to enter an email in a field with id="email".*/
+    /* User Story #6: If I enter an email that is not formatted correctly,
+       I will see an HTML5 validation error.*/
+    #email {
+        width: 25%;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 0;
+        margin-bottom: 10px;
+
+    }
+
+
+    /* User Story #7: Inside the form, I can enter
+       a number in a field with id="number".*/
+    /* User Story #8: If I enter non-numbers in the number input, 
+      I will see an HTML5 validation error.*/
+    /* User Story #9: If I enter numbers outside the range of
+       the number input, which are defined by the min and max attributes, 
+       I will see an HTML5 validation error.*/
+    #number {
+        width: 25%;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    #dropdown {
+        width: 25%;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    #comment {
+        width: 40%;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    #submit {
+        
+      border: none;
+  
+        padding: 10px 20px;
+        margin-top: 15px;
+  
         display: block;
-        padding-top: 20px;
+        font-size: 16px;
+        border-radius: 10px;
     }
 
-    .label-dota{
-        display: inline-block;
-        width: 40%;
-        text-align: right;
-    }
+    /* User Story #10: For the name, email, and number input fields
+       inside the form I can see corresponding labels 
+       that describe the purpose of each field
+       with the following ids: id="name-label", 
+       id="email-label", and id="number-label".*/
+    /* User Story #11: For the name, email, and number input fields, 
+       I can see placeholder text that gives me a 
+       description or instructions for each field. */
 
-    .input-dota{
-        display: inline-block;
-        text-align: left;
-        width: 48%;
-    }
 
-    .select-input{
-        display:inline-block;
-        text-align: left;
-        width: 48%;
-    }
-
-    .label-select{
-        display: inline-block;
-        width: 40%;
-        text-align: right;
-    }
-
-    .labels-radio{
-        display: inline-block;
-        width: 40%;
-        text-align: right;
-    }
-
-    .input-radio{
-        display: inline-block;
-        text-align: left;
-        width: 48%;
-    }
+    
 
 </style>
 <html>
 
-    <head>
-        <title>A fun Survey!</title>
-    </head>
+<head>
+    <title>A fun Survey!</title>
+</head>
 
-    <body>
-        
-        <h1 id="title"><u>Programming Language Survey</u></h1>
+<body>
 
+    <h1 id="title"><u>Programming Language Survey</u></h1>
+
+    <p id=description>
+        This is a short survey about your programming habits
+    </p>
+    <div id="body">
         <form id="survey-form">
 
-            <div class="row-tab">
+            <label id="name-label" for="name">
+                <p>Name:</p>
+            </label>
+            <input id="name" type="text" placeholder="Enter Your Name" required>
 
-                <div class="label-dota">
-                    <label for="name">
-                        Name<input id="name" type="text" placeholder="Name">
-                    </label>                    
-                </div>
-                
-                <div class="email-stuff">
-                    <label for="age">
-                        Age<input id="age" type="number" placeholder=0>
-                    </label>
-                </div>
-                
+            <label id="email-label" for="email">
+                <p>Email:</p>
+            </label>
+            <input id="email" type="email" placeholder="Enter Your Email" required>
 
-            </div>
+            <label id="number-label" for="number">
+                <p>Age:</p>
+            </label>
+            <input id="number" type="number" placeholder="Enter Your Age" min="10" max="90" required>
 
-            <div class="row-tab">
-                <div class="label-select">
-                    <label >Select Fav Position</label>
-                </div>
-                <div class="select-input">
-                    <select>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-            </div>
+            <p>Favourite Programming Language?</p>
+            <select id="dropdown">
 
+                <option value="java">Java</option>
+                <option value="c++">C++</option>
+                <option value="ruby">Ruby</option>
+                <option value="python">Python</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="default">None of these</option>
 
-            <div class="row-tab">
-                <div class="labels-radio">                    
-                    Location:
-                </div>
-                <div class="input-radio">
+            </select>
 
-                    <label> London
-                        <input type="radio" name="location">
-                    </label>
-                    <label> Nottingham
-                        <input type="radio" name="location">
-                    </label>
-                    <label> Oxford
-                        <input type="radio" name="location">
-                    </label>
-                   
+            <p>How old where you when you started programming?</p>
+        <label>
+            <input type="radio" name="starting-age" value="1">7-12
+        </label>
+        <label>
+            <input type="radio" name="starting-age" value="2">13-15
+        </label>
+        <label>
+            <input type="radio" name="starting-age" value="3">15-18
+        <label>
+            <input type="radio" name="starting-age" value="4">19-22
+        </label>
+        <label>
+            <input type="radio" name="starting-age" value="5">22-27
+        </label>
+        <label>
+            <input type="radio" name="starting-age" value="6">28-33
+        </label>
+        <label>
+            <input type="radio" name="starting-age" value="7">33-40
+        </label>
+        <label>
+            <input type="radio" name="starting-age" value="8">>40
+        </label>
+       
+        
+            <p>What Programming Languages Do You Know?</p>
+            <input type="checkbox" name="languages" value="java">Java
+            <input type="checkbox" name="languages" value="c++">C++
+            <input type="checkbox" name="languages" value="ruby">Ruby
+            <input type="checkbox" name="languages" value="python">Python
+            <input type="checkbox" name="languages" value="html">HTML
+            <input type="checkbox" name="languages" value="css">CSS
+            <input type="checkbox" name="languages" value="javascript">JavaScript
+            <input type="checkbox" name="languages" value="other">Other
+      
+            <p>Tell Us Why Did You Started Programming</p>
+            <textarea id="comment" rows="4" cols="40"></textarea>
 
-                </div>
-            </div>
-
+            <button id="submit" type="submit" value="Submit">Submit
         </form>
-
-    </body>
+    </div>
+</body>
 
 </html>
